@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aws-iam-least-priv"
+version = "0.1.0"
+description = "Right-size over-broad IAM roles from what they actually did, per CloudTrail."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "Michael Tarassov", email = "michael@tarassov.me" }]
+keywords = ["aws", "iam", "security", "least-privilege", "cloudtrail", "policy"]
+dependencies = ["boto3>=1.28"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+aws-iam-least-priv = "aws_iam_least_priv.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/moveeeax/aws-iam-least-priv"
+
+[tool.setuptools.packages.find]
+where = ["src"]

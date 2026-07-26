@@ -1,0 +1,8 @@
+{
+  "Records": [
+    {"eventSource":"s3.amazonaws.com","eventName":"GetObject","userIdentity":{"type":"AssumedRole","arn":"arn:aws:sts::111122223333:assumed-role/app-runtime/i-0abc","sessionContext":{"sessionIssuer":{"userName":"app-runtime"}}},"resources":[{"ARN":"arn:aws:s3:::my-bucket/data.csv"}]},
+    {"eventSource":"s3.amazonaws.com","eventName":"PutObject","userIdentity":{"type":"AssumedRole","arn":"arn:aws:sts::111122223333:assumed-role/app-runtime/i-0abc","sessionContext":{"sessionIssuer":{"userName":"app-runtime"}}},"resources":[{"ARN":"arn:aws:s3:::my-bucket/out.csv"}]},
+    {"eventSource":"dynamodb.amazonaws.com","eventName":"GetItem","userIdentity":{"type":"AssumedRole","arn":"arn:aws:sts::111122223333:assumed-role/app-runtime/i-0abc","sessionContext":{"sessionIssuer":{"userName":"app-runtime"}}},"resources":[{"ARN":"arn:aws:dynamodb:us-east-1:111122223333:table/sessions"}]},
+    {"eventSource":"s3.amazonaws.com","eventName":"DeleteBucket","userIdentity":{"type":"AssumedRole","arn":"arn:aws:sts::111122223333:assumed-role/other-role/x","sessionContext":{"sessionIssuer":{"userName":"other-role"}}},"resources":[{"ARN":"arn:aws:s3:::someone-else"}]}
+  ]
+}
