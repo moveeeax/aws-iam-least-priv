@@ -32,7 +32,7 @@ Not published on PyPI; install straight from a tagged release on GitHub
 (Python 3.11+):
 
 ```bash
-pip install "git+https://github.com/moveeeax/aws-iam-least-priv@v0.1.0"
+pip install "git+https://github.com/moveeeax/aws-iam-least-priv@v0.1.1"
 ```
 
 ## Usage
