@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Right-size over-broad IAM roles from what they actually did, per CloudTrail."
 readme = "README.md"
 license = { text = "MIT" }
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 authors = [{ name = "Michael Tarassov", email = "michael@tarassov.me" }]
 keywords = ["aws", "iam", "security", "least-privilege", "cloudtrail", "policy"]
 dependencies = ["boto3>=1.28"]

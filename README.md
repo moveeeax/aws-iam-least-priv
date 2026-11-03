@@ -1,7 +1,7 @@
 # aws-iam-least-priv
 
 [![ci](https://github.com/moveeeax/aws-iam-least-priv/actions/workflows/ci.yml/badge.svg)](https://github.com/moveeeax/aws-iam-least-priv/actions/workflows/ci.yml)
-[![python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
+[![python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 > Right-size over-broad IAM roles using what they actually did, per CloudTrail.
