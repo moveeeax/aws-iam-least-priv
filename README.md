@@ -71,6 +71,7 @@ is imported lazily only in live mode.
 ```bash
 make install   # pip install -e ".[dev]"
 make test      # pytest -q
+make lint      # ruff check src tests
 ```
 
 ## License

@@ -14,7 +14,7 @@ keywords = ["aws", "iam", "security", "least-privilege", "cloudtrail", "policy"]
 dependencies = ["boto3>=1.28"]
 
 [project.optional-dependencies]
-dev = ["pytest>=7"]
+dev = ["pytest>=7", "ruff>=0.17"]
 
 [project.scripts]
 aws-iam-least-priv = "aws_iam_least_priv.cli:main"
@@ -24,3 +24,10 @@ Homepage = "https://github.com/moveeeax/aws-iam-least-priv"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]

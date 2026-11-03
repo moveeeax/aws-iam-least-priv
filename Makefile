@@ -7,7 +7,7 @@ test:
 	pytest -q
 
 lint:
-	python -m compileall src
+	ruff check src tests
 
 clean:
 	rm -rf build dist *.egg-info .pytest_cache
