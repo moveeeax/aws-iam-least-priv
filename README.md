@@ -1,7 +1,7 @@
 # aws-iam-least-priv
 
 [![ci](https://github.com/moveeeax/aws-iam-least-priv/actions/workflows/ci.yml/badge.svg)](https://github.com/moveeeax/aws-iam-least-priv/actions/workflows/ci.yml)
-[![python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
+[![python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 > Right-size over-broad IAM roles using what they actually did, per CloudTrail.
@@ -28,8 +28,11 @@ attached so you can see exactly what to remove.
 
 ## Install
 
+Not published on PyPI; install straight from a tagged release on GitHub
+(Python 3.11+):
+
 ```bash
-pip install aws-iam-least-priv
+pip install "git+https://github.com/moveeeax/aws-iam-least-priv@v0.1.1"
 ```
 
 ## Usage
@@ -54,6 +57,11 @@ aws-iam-least-priv analyze \
   tighten (broad wildcards): s3:*
 ```
 
+By default each statement's `Resource` is scoped to the ARNs observed for that
+service. Pass `--wildcard-resources` to emit `"Resource": "*"` in every statement
+instead, e.g. when the events don't carry resource ARNs and you plan to scope by
+hand.
+
 Live mode uses the standard AWS credential chain (`--profile` / `--region`
 supported) and needs `cloudtrail:LookupEvents`.
 
@@ -71,6 +79,7 @@ is imported lazily only in live mode.
 ```bash
 make install   # pip install -e ".[dev]"
 make test      # pytest -q
+make lint      # ruff check src tests
 ```
 
 ## License
