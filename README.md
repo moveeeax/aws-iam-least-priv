@@ -28,8 +28,11 @@ attached so you can see exactly what to remove.
 
 ## Install
 
+Not published on PyPI; install straight from a tagged release on GitHub
+(Python 3.11+):
+
 ```bash
-pip install aws-iam-least-priv
+pip install "git+https://github.com/moveeeax/aws-iam-least-priv@v0.1.0"
 ```
 
 ## Usage
@@ -53,6 +56,11 @@ aws-iam-least-priv analyze \
   remove (granted, unused): dynamodb:DeleteTable, iam:PassRole
   tighten (broad wildcards): s3:*
 ```
+
+By default each statement's `Resource` is scoped to the ARNs observed for that
+service. Pass `--wildcard-resources` to emit `"Resource": "*"` in every statement
+instead, e.g. when the events don't carry resource ARNs and you plan to scope by
+hand.
 
 Live mode uses the standard AWS credential chain (`--profile` / `--region`
 supported) and needs `cloudtrail:LookupEvents`.
