@@ -85,3 +85,7 @@ make lint      # ruff check src tests
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+**Archived on 2026-11-05.** IAM Access Analyzer policy generation does the same CloudTrail-to-policy synthesis natively (org trails, 90 days, resource-level where supported), plus unused-access findings; iamlive and Repokid cover the live/pruning variants. The naive eventSource:eventName mapping here is also wrong for many services (e.g. eventName != IAM action, S3 data events), which Access Analyzer handles. No clear angle beyond "works offline on a log file".
